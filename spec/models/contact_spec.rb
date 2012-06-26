@@ -64,6 +64,29 @@ describe Contact do
       @contact_dupe.email = @contact.email.upcase
       @contact_dupe.should_not be_valid
     end
+  end
 
+  describe "scopes and ordering" do
+    it "should have contacts in the right order" do
+      @contact_older = Contact.create(
+                          email: Random.email,
+                          first_name: Random.firstname,
+                          last_name: Random.lastname,
+                          phone: Random.phone
+                        )
+      @contact_newer = Contact.create(
+                          email: Random.email,
+                          first_name: Random.firstname,
+                          last_name: Random.lastname,
+                          phone: Random.phone
+                        )
+
+      @contact_older.created_at = 1.day.ago
+      @contact_newer.created_at = 1.hour.ago
+      @contact_older.save
+      @contact_newer.save
+
+      Contact.all.should == [@contact_newer, @contact_older]
+    end
   end
 end

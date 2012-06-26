@@ -7,6 +7,8 @@ class Contact < ActiveRecord::Base
 
   before_save { |contact| contact.email = email.downcase }
 
+  default_scope order: 'contacts.created_at DESC'
+
   def phone=(num)
     num.gsub!(/\D/, '') if num.is_a?(String)
     super(num)
