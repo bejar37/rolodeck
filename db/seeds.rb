@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# erase db
+Contact.delete_all
+
+# populate contacts
+10.times do |c|
+  contact = Contact.new
+  contact.email = Random.email
+  contact.first_name = Random.firstname
+  contact.last_name = Random.lastname
+  contact.phone = Random.phone
+
+  contact.save!
+end

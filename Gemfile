@@ -5,6 +5,7 @@ gem 'rails', '3.2.6'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'random_data'
 end
 
 group :production do
@@ -19,3 +20,4 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'simple_form'

@@ -1,0 +1,22 @@
+<h1>Contact Detail</h1>
+
+<p>
+  <%= link_to "Home", root_url %>
+</p>
+
+<% if @contact %>
+  <table>
+    <thead>
+      <td><b>Name</b></td>
+      <td><b>Email</b></td>
+      <td><b>Phone</b></td>
+    </thead>
+    <tr>
+      <td><%= "#{@contact.first_name} #{@contact.last_name}" %></td>
+      <td><%= @contact.email %></td>
+      <td><%= number_to_phone(@contact.phone) %></td>
+    </tr>
+  </table>
+<% else %>
+  Oops, I can't find that contact.
+<% end %>

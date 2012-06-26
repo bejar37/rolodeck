@@ -6,4 +6,9 @@ class Contact < ActiveRecord::Base
   validates :email, uniqueness: { case_sensitive: false }
 
   before_save { |contact| contact.email = email.downcase }
+
+  def phone=(num)
+    num.gsub!(/\D/, '') if num.is_a?(String)
+    super(num)
+  end
 end
