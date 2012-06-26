@@ -1,7 +1,9 @@
 <h1>Contact Detail</h1>
 
 <p>
-  <%= link_to "Home", root_url %>
+  <%= link_to "Home", root_url %> |
+  <%= link_to "Edit", edit_contact_path %> |
+  <%= link_to 'Destroy', @contact, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
 
 <% if @contact %>
