@@ -9,12 +9,14 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th><b>Pic</b></th>
         <th><b>Name</b></th>
         <th><b>Email</b></th>
         <th><b>Phone</b></th>
       </tr>
     </thead>
     <tr>
+      <td><%= gravatar_image_tag @contact.email %></td>
       <td><%= "#{@contact.first_name} #{@contact.last_name}" %></td>
       <td><%= @contact.email %></td>
       <td><%= number_to_phone(@contact.phone) %></td>

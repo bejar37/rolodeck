@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><b>Pic</b></th>
       <th><b>Name</b></th>
       <th><b>Email</b></th>
       <th><b>Phone</b></th>
@@ -10,6 +11,7 @@
   </thead>
 <% @contacts.each do |c| %>
   <tr>
+    <td><%= gravatar_image_tag c.email, gravatar: { size: 25 } %></td>
     <td><%= link_to "#{c.first_name} #{c.last_name}", c %></td>
     <td><%= c.email %></td>
     <td><%= number_to_phone(c.phone) %></td>
