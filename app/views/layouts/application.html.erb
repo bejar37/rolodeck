@@ -5,14 +5,36 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Rolodecks", root_url, id: "logo" %>
+        <nav>
+          <ul class="nav">
+            <li><%= link_to "Home", root_url %></li>
+            <li><%= link_to "New", new_contact_url %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
+  <div class="container">
 
-  <%= yield %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </div>
 
 </body>
 </html>

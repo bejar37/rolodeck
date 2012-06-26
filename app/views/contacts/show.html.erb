@@ -1,17 +1,18 @@
 <h1>Contact Detail</h1>
 
 <p>
-  <%= link_to "Home", root_url %> |
-  <%= link_to "Edit", edit_contact_path %> |
-  <%= link_to 'Destroy', @contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Edit", edit_contact_path, class: 'btn' %>
+  <%= link_to 'Destroy', @contact, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
 
 <% if @contact %>
-  <table>
+  <table class="table table-striped">
     <thead>
-      <td><b>Name</b></td>
-      <td><b>Email</b></td>
-      <td><b>Phone</b></td>
+      <tr>
+        <th><b>Name</b></th>
+        <th><b>Email</b></th>
+        <th><b>Phone</b></th>
+      </tr>
     </thead>
     <tr>
       <td><%= "#{@contact.first_name} #{@contact.last_name}" %></td>

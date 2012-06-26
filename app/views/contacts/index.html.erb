@@ -1,14 +1,12 @@
 <h1>Contacts</h1>
 
-<p>
-  <%= link_to "New Contact", new_contact_url %>
-</p>
-
-<table>
+<table class="table table-striped">
   <thead>
-    <td><b>Name</b></td>
-    <td><b>Email</b></td>
-    <td><b>Phone</b></td>
+    <tr>
+      <th><b>Name</b></th>
+      <th><b>Email</b></th>
+      <th><b>Phone</b></th>
+    </tr>
   </thead>
 <% @contacts.each do |c| %>
   <tr>
