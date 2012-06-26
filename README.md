@@ -6,7 +6,8 @@ This is the base Rails application for the TDD day with Swipely. It provides a s
 
 ```
 bundle install --without production
-rails generate rspec:install
+rake db:migrate
+rake db:seed
 ```
 
 ### production
