@@ -1,8 +1,10 @@
 <h1>Contact Detail</h1>
 
 <p>
+  <%= link_to 'Login', sessions_path(id: @contact.id), class: 'btn', method: :post %>
   <%= link_to "Edit", edit_contact_path, class: 'btn' %>
   <%= link_to 'Destroy', @contact, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+
 </p>
 
 <% if @contact %>

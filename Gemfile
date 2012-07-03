@@ -6,6 +6,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'random_data'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 group :production do
