@@ -18,7 +18,7 @@ describe SessionsController do
     end
 
     it 'should redirect to show contact' do
-      response.should redirect_to(contact_path(contact))
+      response.should redirect_to(contacts_path(contact))
     end
   end
 end
